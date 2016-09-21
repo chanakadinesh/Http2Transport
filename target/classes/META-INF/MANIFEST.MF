@@ -6,7 +6,7 @@ Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
 Bundle-SymbolicName: org.wso2.carbon.http2.transport
 Built-By: chanakabalasooriya
 Bundle-ManifestVersion: 2
-Bnd-LastModified: 1474435575260
+Bnd-LastModified: 1474450185304
 Bundle-DocURL: http://www.wso2.org/
 Bundle-Vendor: WSO2
 Import-Package: io.netty.bootstrap;version="[4.1,5)";resolution:=optio
@@ -23,25 +23,32 @@ Import-Package: io.netty.bootstrap;version="[4.1,5)";resolution:=optio
  .util.concurrent;version="[4.1,5)";resolution:=optional,javax.net.ssl
  ;resolution:=optional,javax.xml.stream;version="[1.0,2)";resolution:=
  optional,org.apache.axiom.om;version="[1.2.11,1.3.0)",org.apache.axio
- m.soap;version="[1.2.11,1.3.0)",org.apache.axiom.util;version="[1.2.1
- 1,1.3.0)",org.apache.axis2;version="[1.6.1.wso2v11,1.7.0)",org.apache
- .axis2.builder;version="[1.6.1.wso2v11,1.7.0)",org.apache.axis2.conte
- xt;version="[1.6.1.wso2v11,1.7.0)",org.apache.axis2.description;versi
- on="[1.6.1.wso2v11,1.7.0)",org.apache.axis2.engine;version="[1.6.1.ws
- o2v11,1.7.0)",org.apache.axis2.transport;version="[1.6.1.wso2v11,1.7.
- 0)",org.apache.axis2.transport.base;version="[1.6.1.wso2v11,1.7.0)",o
- rg.apache.axis2.util;version="[1.6.1.wso2v11,1.7.0)",org.apache.commo
- ns.io.input;version="[2.0,3)";resolution:=optional,org.apache.commons
- .io.output;version="[2.0,3)";resolution:=optional,org.apache.commons.
- logging;version="[1.2,2)";resolution:=optional,org.apache.http;versio
- n="[4.3,5)";resolution:=optional,org.apache.synapse;resolution:=optio
- nal,org.apache.synapse.core.axis2;resolution:=optional,org.apache.syn
- apse.transport.http.conn;resolution:=optional,org.apache.synapse.tran
- sport.nhttp.config;resolution:=optional,org.apache.synapse.transport.
- passthru;resolution:=optional,org.apache.synapse.transport.passthru.u
- til;resolution:=optional,org.osgi.framework;version="[1.6,2)",org.osg
- i.service.component;version="[1.2,2)";resolution:=optional,org.wso2.c
- arbon.core.multitenancy.utils;version="[4.4,5)",org.wso2.carbon.core.
+ m.soap;version="[1.2.11,1.3.0)",org.apache.axiom.soap.impl.llom.soap1
+ 1;version="[1.2.11,1.3.0)",org.apache.axis2;version="[1.6.1.wso2v11,1
+ .7.0)",org.apache.axis2.addressing;version="[1.6.1.wso2v11,1.7.0)",or
+ g.apache.axis2.builder;version="[1.6.1.wso2v11,1.7.0)",org.apache.axi
+ s2.context;version="[1.6.1.wso2v11,1.7.0)",org.apache.axis2.descripti
+ on;version="[1.6.1.wso2v11,1.7.0)",org.apache.axis2.engine;version="[
+ 1.6.1.wso2v11,1.7.0)",org.apache.axis2.transport;version="[1.6.1.wso2
+ v11,1.7.0)",org.apache.axis2.transport.base;version="[1.6.1.wso2v11,1
+ .7.0)",org.apache.axis2.transport.base.threads;version="[1.6.1.wso2v1
+ 1,1.7.0)",org.apache.axis2.util;version="[1.6.1.wso2v11,1.7.0)",org.a
+ pache.axis2.wsdl;version="[1.6.1.wso2v11,1.7.0)",org.apache.commons.c
+ ollections.map;version="[3.2,4)";resolution:=optional,org.apache.comm
+ ons.io.input;version="[2.0,3)";resolution:=optional,org.apache.common
+ s.io.output;version="[2.0,3)";resolution:=optional,org.apache.commons
+ .logging;version="[1.2,2)";resolution:=optional,org.apache.http;versi
+ on="[4.3,5)";resolution:=optional,org.apache.http.protocol;version="[
+ 4.3,5)";resolution:=optional,org.apache.synapse;resolution:=optional,
+ org.apache.synapse.transport.customlogsetter;resolution:=optional,org
+ .apache.synapse.transport.http.conn;resolution:=optional,org.apache.s
+ ynapse.transport.nhttp;resolution:=optional,org.apache.synapse.transp
+ ort.nhttp.config;resolution:=optional,org.apache.synapse.transport.pa
+ ssthru;resolution:=optional,org.apache.synapse.transport.passthru.con
+ fig;resolution:=optional,org.apache.synapse.transport.passthru.jmx;re
+ solution:=optional,org.apache.synapse.transport.passthru.util;resolut
+ ion:=optional,org.osgi.framework;version="[1.6,2)",org.osgi.service.c
+ omponent;version="[1.2,2)";resolution:=optional,org.wso2.carbon.core.
  transports;version="[4.4,5)",org.wso2.carbon.core.transports.util;ver
  sion="[4.4,5)",org.wso2.carbon.utils;version="[4.4,5)",org.wso2.carbo
  n.utils.multitenancy;version="[4.4,5)"
@@ -50,32 +57,36 @@ Tool: Bnd-1.43.0
 Export-Package: org.wso2.carbon.http2.transport.service;uses:="org.apa
  che.commons.logging,org.wso2.carbon.core.transports.util,org.wso2.car
  bon.core.transports,org.wso2.carbon.utils";version="1.0.0.SNAPSHOT",o
- rg.wso2.carbon.http2.transport;uses:="org.apache.axis2.transport,io.n
- etty.handler.codec.http2,javax.xml.stream,org.apache.commons.io.outpu
- t,org.apache.axis2.context,org.apache.synapse.transport.http.conn,org
- .apache.axis2.description,org.apache.commons.logging,org.apache.axis2
- ,io.netty.channel,org.apache.axis2.util,io.netty.buffer,org.apache.ax
- iom.om,org.apache.synapse.transport.nhttp.config,org.apache.axis2.tra
- nsport.base,org.apache.synapse.transport.passthru.util,org.wso2.carbo
- n.http2.transport.util,io.netty.util,org.wso2.carbon.utils.multitenan
- cy,org.apache.http,io.netty.handler.codec.http,org.apache.synapse.tra
- nsport.passthru";version="1.0.0.SNAPSHOT",org.wso2.carbon.http2.trans
- port.internal;uses:="org.osgi.framework,org.osgi.service.component,or
- g.apache.axis2.engine,org.apache.commons.logging,org.wso2.carbon.http
- 2.transport.service,org.apache.axis2.context,org.wso2.carbon.utils,or
- g.wso2.carbon.core.transports";version="1.0.0.SNAPSHOT",org.wso2.carb
- on.http2.transport.util;uses:="io.netty.buffer,io.netty.handler.codec
- .http2,io.netty.util,io.netty.handler.ssl,io.netty.channel.socket.nio
- ,io.netty.handler.codec.http,io.netty.bootstrap,io.netty.util.concurr
- ent,io.netty.channel.nio,io.netty.channel,org.apache.synapse,org.apac
- he.axis2.transport,org.wso2.carbon.http2.transport.service,org.apache
- .axis2.context,org.apache.axis2.description,org.apache.synapse.core.a
- xis2,org.apache.axis2.builder,org.apache.commons.logging,org.apache.c
- ommons.io.input,org.apache.axis2,org.wso2.carbon.core.multitenancy.ut
- ils,org.apache.axiom.om,org.apache.axis2.engine,org.apache.axiom.soap
- ,org.wso2.carbon.utils.multitenancy,org.apache.axiom.util,org.wso2.ca
- rbon.utils,io.netty.channel.socket,io.netty.handler.logging,javax.net
- .ssl,io.netty.handler.ssl.util";version="1.0.0.SNAPSHOT"
+ rg.wso2.carbon.http2.transport;uses:="org.apache.axis2.transport,org.
+ apache.synapse.transport.passthru.jmx,io.netty.handler.codec.http2,ja
+ vax.xml.stream,org.apache.commons.io.output,org.apache.axis2.context,
+ org.apache.synapse.transport.http.conn,org.apache.axis2.description,o
+ rg.apache.commons.logging,org.apache.axis2,io.netty.channel,org.apach
+ e.axis2.util,io.netty.buffer,org.apache.axis2.transport.base.threads,
+ org.apache.synapse.transport.nhttp.config,org.apache.axiom.om,org.apa
+ che.axis2.transport.base,org.apache.synapse.transport.passthru.util,o
+ rg.wso2.carbon.http2.transport.util,org.wso2.carbon.utils.multitenanc
+ y,io.netty.util,org.apache.http,io.netty.handler.codec.http,org.apach
+ e.synapse.transport.passthru.config,org.apache.synapse.transport.pass
+ thru";version="1.0.0.SNAPSHOT",org.wso2.carbon.http2.transport.intern
+ al;uses:="org.osgi.framework,org.osgi.service.component,org.apache.ax
+ is2.engine,org.apache.commons.logging,org.wso2.carbon.http2.transport
+ .service,org.apache.axis2.context,org.wso2.carbon.utils,org.wso2.carb
+ on.core.transports";version="1.0.0.SNAPSHOT",org.wso2.carbon.http2.tr
+ ansport.util;uses:="io.netty.buffer,io.netty.handler.codec.http2,io.n
+ etty.util,io.netty.handler.ssl,io.netty.channel.socket.nio,io.netty.h
+ andler.codec.http,io.netty.bootstrap,io.netty.util.concurrent,io.nett
+ y.channel.nio,io.netty.channel,org.apache.synapse,org.apache.synapse.
+ transport.passthru.config,org.apache.commons.logging,org.apache.axis2
+ .context,io.netty.channel.socket,io.netty.handler.logging,org.apache.
+ axis2.transport,org.apache.axiom.om,org.apache.axis2.engine,org.apach
+ e.axiom.soap,org.apache.http.protocol,org.apache.synapse.transport.cu
+ stomlogsetter,org.apache.http,org.apache.axis2.addressing,org.apache.
+ synapse.transport.nhttp,org.apache.axis2.description,org.apache.axis2
+ .builder,org.apache.commons.io.input,org.apache.synapse.transport.pas
+ sthru,org.apache.axiom.soap.impl.llom.soap11,org.apache.axis2,org.apa
+ che.axis2.wsdl,javax.net.ssl,io.netty.handler.ssl.util,org.apache.com
+ mons.collections.map";version="1.0.0.SNAPSHOT"
 Bundle-Name: org.wso2.carbon.http2.transport
 Bundle-Version: 1.0.0.SNAPSHOT
 Created-By: Apache Maven Bundle Plugin

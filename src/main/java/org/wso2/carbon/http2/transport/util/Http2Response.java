@@ -2,10 +2,13 @@ package org.wso2.carbon.http2.transport.util;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.handler.codec.http.FullHttpResponse;
+import io.netty.handler.codec.http.HttpHeaderNames;
 import io.netty.handler.codec.http2.Http2DataFrame;
+import io.netty.handler.codec.http2.Http2Headers;
 import io.netty.handler.codec.http2.Http2HeadersFrame;
 import io.netty.util.CharsetUtil;
 import org.apache.commons.collections.map.MultiValueMap;
+import org.apache.commons.httpclient.StatusLine;
 import org.apache.http.Header;
 
 import java.util.*;
@@ -19,7 +22,8 @@ public class Http2Response {
     private Map excessHeaders = new MultiValueMap();
     private boolean endOfStream=false;
     private boolean expectResponseBody=false;
-    private int status;
+    private int status=200;
+    private String statusLine = "OK";
     private boolean responseFromHttp2Server=true;
     private byte [] data;
 
@@ -47,8 +51,8 @@ public class Http2Response {
         return headers.get(contentType);
     }
 
-    public Object getStatusLine() {
-        return null;
+    public String getStatusLine() {
+        return this.statusLine;
     }
 
 
@@ -57,14 +61,22 @@ public class Http2Response {
         endOfStream=true;
         List<Map.Entry<String,String>> headerList=response.headers().entries();
         for (Map.Entry header:headerList) {
+            String key=header.getKey().toString();
+            key=(key.charAt(0)==':')?key.substring(1):key;
            // headers.put((String) entry.getKey(),(String) entry.getValue());
-            if(this.headers.containsKey(header.getKey().toString())) {
-                this.excessHeaders.put(header.getKey().toString(),header.getValue().toString());
+            if(this.headers.containsKey(key)) {
+                this.excessHeaders.put(key,header.getValue().toString());
             } else {
-                this.headers.put(header.getKey().toString(), header.getValue().toString());
+                this.headers.put(key, header.getValue().toString());
             }
         }
-        this.status=response.getStatus().code();
+        this.status=response.status().code();
+        this.statusLine=response.status().reasonPhrase();
+        if(response.headers().contains(HttpHeaderNames.CONTENT_TYPE)){
+            expectResponseBody=true;
+            setData(response);
+        }
+
 
     }
     public Http2Response(Http2HeadersFrame frame){
@@ -75,16 +87,25 @@ public class Http2Response {
         Iterator<Map.Entry<CharSequence,CharSequence>> iterator=frame.headers().iterator();
         while (iterator.hasNext()){
             Map.Entry<CharSequence,CharSequence> header=iterator.next();
-            if(this.headers.containsKey(header.getKey().toString())) {
-                this.excessHeaders.put(header.getKey().toString(),header.getValue().toString());
+            String key=header.getKey().toString();
+            key=(key.charAt(0)==':')?key.substring(1):key;
+
+            if(this.headers.containsKey(key)) {
+                this.excessHeaders.put(key,header.getValue().toString());
             } else {
-                this.headers.put(header.getKey().toString(), header.getValue().toString());
+                this.headers.put(key, header.getValue().toString());
             }
         }
-
+        if(headers.containsKey("status")){
+            status=Integer.parseInt(headers.get("status").toString());
+        }
+        if(headers.containsKey(HttpHeaderNames.CONTENT_TYPE)){
+            expectResponseBody=true;
+        }
     }
     public void setDataFrame(Http2DataFrame data){
         setData(data);
+        expectResponseBody=true;
         if(data.isEndStream()){
             endOfStream=true;
         }

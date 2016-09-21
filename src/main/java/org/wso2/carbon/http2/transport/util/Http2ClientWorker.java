@@ -240,15 +240,17 @@ public class Http2ClientWorker {
                         builder = new SOAPBuilder();
                     }
                 }
-                OMElement documentElement = null;
-                InputStream in = new AutoCloseInputStream(new ByteArrayInputStream(response.getBytes()));
-                documentElement = builder.processDocument(in, contentType, responseMsgCtx);
 
                // SOAPEnvelope envelope = fac.getDefaultEnvelope();
                 try {
+                    OMElement documentElement = null;
+                    InputStream in = new AutoCloseInputStream(new ByteArrayInputStream(response.getBytes()));
+                    documentElement = builder.processDocument(in, contentType, responseMsgCtx);
                     responseMsgCtx.setEnvelope(TransportUtils.createSOAPEnvelope(documentElement));
                 } catch (AxisFault axisFault) {
                     log.error("Error setting SOAP envelope", axisFault);
+                }catch (Exception e){
+                    log.error(e.getStackTrace());
                 }
 
                 responseMsgCtx.setServerSide(true);
