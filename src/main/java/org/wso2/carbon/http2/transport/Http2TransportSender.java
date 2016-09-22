@@ -77,14 +77,6 @@ public class Http2TransportSender extends AbstractTransportSender{
 
     public void sendMessage(MessageContext msgCtx, String targetEPR, OutTransportInfo trpOut)
             throws AxisFault {
-        /*String sourceIdentier = null;
-        boolean handshakePresent = false;
-        String responceDispatchSequence = null;
-        String responceErrorSequence = null;
-        String messageType = null;
-        //InboundResponseSender responseSender = null;
-*/
-
         try {
             if(targetEPR.toLowerCase().contains("http2")){
                 targetEPR=targetEPR.replaceFirst("http2","http");
@@ -124,12 +116,6 @@ public class Http2TransportSender extends AbstractTransportSender{
                 clientHandler.setTenantDomain(MultitenantConstants.SUPER_TENANT_DOMAIN_NAME);
             }
             clientHandler.setTargetConfig(targetConfiguration);
-            /*
-           if (!sourceIdentier.equals(WebsocketConstants.UNIVERSAL_SOURCE_IDENTIFIER)) {
-                clientHandler.registerWebsocketResponseSender(responseSender);
-                clientHandler.setDispatchSequence(responceDispatchSequence);
-                clientHandler.setDispatchErrorSequence(responceErrorSequence);
-            }*/
             //For steaming data
             int streamId;
             if (msgCtx.getProperty(Http2Constants.HTTP2_DATA_FRAME_PRESENT) != null
@@ -174,7 +160,6 @@ public class Http2TransportSender extends AbstractTransportSender{
                     request.headers().add(HttpConversionUtil.ExtensionHeaderNames.SCHEME.text(), secure?HttpScheme.HTTPS:HttpScheme.HTTP);
                     request.headers().add(HttpHeaderNames.ACCEPT_ENCODING, HttpHeaderValues.GZIP);
                     request.headers().add(HttpHeaderNames.ACCEPT_ENCODING, HttpHeaderValues.DEFLATE);
-                    //responseHandler.put(streamId, channel.writeAndFlush(request), channel.newPromise());
                     clientHandler.setRequest(streamId,msgCtx);
                     clientHandler.put(streamId,channel.writeAndFlush(request),channel.newPromise());
                 }
@@ -184,11 +169,8 @@ public class Http2TransportSender extends AbstractTransportSender{
             log.error("Error parsing the WS endpoint url", e);
         } catch (IOException e) {
             log.error("Error writting to the websocket channel", e);
-        /*} catch (InterruptedException e) {
-            log.error("Error writting to the websocket channel", e);*/
         } catch (XMLStreamException e) {
             handleException("Error while building message", e);
         }
     }
-
 }

@@ -61,6 +61,8 @@ public class Http2ConnectionFactory {
         }else
             SSL=false;
         try {
+            /**
+             *Handling SSL*/
             if (SSL) {
                 SslProvider provider = OpenSsl.isAlpnSupported() ? SslProvider.OPENSSL : SslProvider.JDK;
                 sslCtx = SslContextBuilder.forClient()
@@ -124,11 +126,20 @@ public class Http2ConnectionFactory {
             if(!c.isActive()){
                 connections.remove(key);
                 handler= cacheNewConnection(uri);
+            }else if(handler.isStreamIdOverflow()){
+                c.close().syncUninterruptibly();
+                connections.remove(key);
+                handler= cacheNewConnection(uri);
             }
         }
         return handler;
     }
 
+    /**
+     *
+     * @param uri
+     * @return key to merge connection (scheme+host+port)
+     */
     public String generateKey(URI uri){
         String host=uri.getHost();
         int port=uri.getPort();

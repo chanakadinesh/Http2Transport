@@ -66,8 +66,6 @@ public class Http2ClientWorker {
 
         String oriURL = headers.get(PassThroughConstants.LOCATION);
 
-        // Special casing 301, 302, 303 and 307 scenario in following section. Not sure whether it's the correct fix,
-        // but this fix makes it possible to do http --> https redirection.
         if (oriURL != null && ((response.getStatus() != HttpStatus.SC_MOVED_TEMPORARILY) &&
                 (response.getStatus() != HttpStatus.SC_MOVED_PERMANENTLY) &&
                 (response.getStatus() != HttpStatus.SC_CREATED) &&
@@ -123,12 +121,7 @@ public class Http2ClientWorker {
             responseMsgCtx.setOperationContext(outMsgCtx.getOperationContext());
         }
         responseMsgCtx.setProperty("PRE_LOCATION_HEADER",oriURL);
-        // copy the important properties from the original message context
-        /*responseMsgCtx.setProperty(PassThroughConstants.PASS_THROUGH_SOURCE_CONNECTION,
-                outMsgCtx.getProperty(PassThroughConstants.PASS_THROUGH_SOURCE_CONNECTION));
-        responseMsgCtx.setProperty(PassThroughConstants.PASS_THROUGH_SOURCE_CONFIGURATION,
-                outMsgCtx.getProperty(PassThroughConstants.PASS_THROUGH_SOURCE_CONFIGURATION));
-*/
+
         responseMsgCtx.setServerSide(true);
         responseMsgCtx.setDoingREST(outMsgCtx.isDoingREST());
         responseMsgCtx.setProperty(MessageContext.TRANSPORT_IN, outMsgCtx
@@ -165,29 +158,15 @@ public class Http2ClientWorker {
         responseMsgCtx.setOperationContext(outMsgCtx.getOperationContext());
         responseMsgCtx.setConfigurationContext(outMsgCtx.getConfigurationContext());
         responseMsgCtx.setTo(null);
-
-       /* responseMsgCtx.setProperty(PassThroughConstants.PASS_THROUGH_TARGET_RESPONSE, response);
-        responseMsgCtx.setProperty(SynapseDebugInfoHolder.SYNAPSE_WIRE_LOG_HOLDER_PROPERTY, response.getConnection()
-                .getContext().getAttribute(SynapseDebugInfoHolder.SYNAPSE_WIRE_LOG_HOLDER_PROPERTY));
-        responseMsgCtx.setProperty(PassThroughConstants.PASS_THROUGH_TARGET_CONNECTION,
-                response.getConnection());
-        responseMsgCtx.setProperty(PassThroughConstants.PASS_THROUGH_PIPE, response.getPipe());*/
     }
 
-    public void injexttoAxis2Engine() {
+    public void injectToAxis2Engine() {
 
         CustomLogSetter.getInstance().clearThreadLocalContent();
-       // TenantInfoInitiator tenantInfoInitiator = TenantInfoInitiatorProvider.getTenantInfoInitiator();
-        /*if (tenantInfoInitiator != null) {
-            tenantInfoInitiator.initTenantInfo();
-        }*/
         if (responseMsgCtx == null) {
             return;
         }
-       /* if (responseMsgCtx.getProperty(PassThroughConstants.PASS_THROUGH_SOURCE_CONNECTION) != null) {
-            ((NHttpServerConnection) responseMsgCtx.getProperty(PassThroughConstants.PASS_THROUGH_SOURCE_CONNECTION)).
-                    getContext().setAttribute(PassThroughConstants.CLIENT_WORKER_START_TIME, System.currentTimeMillis());
-        }*/
+
         try {
             if (expectEntityBody) {
                 String cType = response.getHeader(HTTP.CONTENT_TYPE);
@@ -269,10 +248,10 @@ public class Http2ClientWorker {
             if (statusCode >= 400) {
                 responseMsgCtx.setProperty(PassThroughConstants.FAULT_MESSAGE,
                         PassThroughConstants.TRUE);
-            } /*else if (statusCode == 202 && responseMsgCtx.getOperationContext().isComplete()) {
+            } else if (statusCode == 202 && responseMsgCtx.getOperationContext().isComplete()) {
                 // Handle out-only invocation scenario
                 responseMsgCtx.setProperty(PassThroughConstants.MESSAGE_BUILDER_INVOKED, Boolean.TRUE);
-            }*/
+            }
             responseMsgCtx.setProperty(PassThroughConstants.NON_BLOCKING_TRANSPORT, true);
 
             // process response received

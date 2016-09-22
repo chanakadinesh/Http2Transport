@@ -10,15 +10,16 @@ import io.netty.handler.codec.http2.*;
 import io.netty.handler.ssl.ApplicationProtocolNames;
 import io.netty.handler.ssl.ApplicationProtocolNegotiationHandler;
 import io.netty.handler.ssl.SslContext;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
-import static io.netty.handler.logging.LogLevel.INFO;
 
 /**
  * Configures the client pipeline to support HTTP/2 frames.
  */
 
 public class Http2ClientInitializer extends ChannelInitializer<SocketChannel> {
-    private static final Http2FrameLogger logger = new Http2FrameLogger(INFO, Http2ClientInitializer.class);
+    protected static final Log log = LogFactory.getLog(Http2ClientInitializer.class);
 
     private final SslContext sslCtx;
     private final int maxContentLength;
@@ -127,7 +128,7 @@ public class Http2ClientInitializer extends ChannelInitializer<SocketChannel> {
     private static class UserEventLogger extends ChannelInboundHandlerAdapter {
         @Override
         public void userEventTriggered(ChannelHandlerContext ctx, Object evt) throws Exception {
-            System.out.println("User Event Triggered: " + evt);
+           log.info("User Event Triggered: " + evt);
             ctx.fireUserEventTriggered(evt);
         }
     }

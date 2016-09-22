@@ -55,7 +55,6 @@ public class Http2Response {
         return this.statusLine;
     }
 
-
     public Http2Response(FullHttpResponse response){
         responseFromHttp2Server=false;
         endOfStream=true;
@@ -63,7 +62,6 @@ public class Http2Response {
         for (Map.Entry header:headerList) {
             String key=header.getKey().toString();
             key=(key.charAt(0)==':')?key.substring(1):key;
-           // headers.put((String) entry.getKey(),(String) entry.getValue());
             if(this.headers.containsKey(key)) {
                 this.excessHeaders.put(key,header.getValue().toString());
             } else {
@@ -79,6 +77,7 @@ public class Http2Response {
 
 
     }
+
     public Http2Response(Http2HeadersFrame frame){
         responseFromHttp2Server=true;
         if(frame.isEndStream()){
@@ -103,6 +102,7 @@ public class Http2Response {
             expectResponseBody=true;
         }
     }
+
     public void setDataFrame(Http2DataFrame data){
         setData(data);
         expectResponseBody=true;
@@ -114,6 +114,7 @@ public class Http2Response {
     public byte[] getBytes() {
         return data;
     }
+
     private void setData(Object res){
         String response="";
         ByteBuf content;

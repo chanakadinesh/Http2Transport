@@ -1,55 +1,22 @@
 package org.wso2.carbon.http2.transport.util;
 
-import io.netty.buffer.ByteBuf;
 import io.netty.channel.*;
 import io.netty.handler.codec.http.FullHttpResponse;
-import io.netty.handler.codec.http.HttpHeaderNames;
-import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
 import io.netty.handler.codec.http2.Http2DataFrame;
 import io.netty.handler.codec.http2.Http2HeadersFrame;
 import io.netty.handler.codec.http2.HttpConversionUtil;
-import io.netty.util.CharsetUtil;
-import org.apache.axiom.om.OMAbstractFactory;
-import org.apache.axiom.om.OMElement;
-import org.apache.axiom.soap.SOAPEnvelope;
-import org.apache.axiom.soap.SOAPFactory;
-import org.apache.axiom.util.UIDGenerator;
-import org.apache.axis2.AxisFault;
-import org.apache.axis2.builder.Builder;
-import org.apache.axis2.builder.BuilderUtil;
-import org.apache.axis2.builder.SOAPBuilder;
-import org.apache.axis2.context.ConfigurationContext;
-import org.apache.axis2.context.OperationContext;
-import org.apache.axis2.context.ServiceContext;
-import org.apache.axis2.description.InOutAxisOperation;
-import org.apache.axis2.description.WSDL2Constants;
-import org.apache.axis2.engine.AxisEngine;
-import org.apache.axis2.engine.MessageReceiver;
-import org.apache.axis2.transport.TransportUtils;
-import org.apache.commons.io.input.AutoCloseInputStream;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.axis2.context.MessageContext;
 
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
-import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelPromise;
 import io.netty.channel.SimpleChannelInboundHandler;
-import org.apache.synapse.SynapseConstants;
-import org.apache.synapse.core.axis2.MessageContextCreatorForAxis2;
-import org.apache.synapse.inbound.InboundEndpointConstants;
-import org.apache.synapse.mediators.MediatorFaultHandler;
-import org.apache.synapse.mediators.base.SequenceMediator;
 import org.apache.synapse.transport.passthru.config.TargetConfiguration;
-import org.wso2.carbon.core.multitenancy.utils.TenantAxisUtils;
-import org.wso2.carbon.http2.transport.service.ServiceReferenceHolder;
-import org.wso2.carbon.utils.multitenancy.MultitenantConstants;
 
 import java.util.Iterator;
 import java.util.SortedMap;
@@ -68,6 +35,7 @@ public class Http2ClientHandler extends SimpleChannelInboundHandler<Object> {
     private Channel channel;
     private TargetConfiguration targetConfig;
     private TreeMap<Integer,Http2Response> responseMap;
+    private boolean streamIdOverflow=false;
 
     public void setTenantDomain(String tenantDomain) {
     }
@@ -180,7 +148,7 @@ public class Http2ClientHandler extends SimpleChannelInboundHandler<Object> {
 
             if(response.isEndOfStream()){
                 Http2ClientWorker clientWorker=new Http2ClientWorker(targetConfig,request,response);
-                clientWorker.injexttoAxis2Engine();
+                clientWorker.injectToAxis2Engine();
                 requests.remove(streamId);
                 responseMap.remove(streamId);
                 streamidPromiseMap.remove(streamId);
@@ -188,13 +156,20 @@ public class Http2ClientHandler extends SimpleChannelInboundHandler<Object> {
         }
     }
 
-    public synchronized int getStreamId() {
+    public int getStreamId() {
         int returnId=currentStreamId;
+        if(currentStreamId>Integer.MAX_VALUE-10){   //Max stream_id is Integer.Max-10
+            streamIdOverflow=true;
+        }
         currentStreamId+=2;
         return returnId;
     }
 
-    public void setRequest(int streamId,MessageContext msgCtx){
+    public boolean isStreamIdOverflow() {
+        return streamIdOverflow;
+    }
+
+    public void setRequest(int streamId, MessageContext msgCtx){
         requests.put(streamId,msgCtx);
     }
 
@@ -203,127 +178,3 @@ public class Http2ClientHandler extends SimpleChannelInboundHandler<Object> {
         this.targetConfig=targetConfiguration;
     }
 }
-
-//Take response and send back to Synapse
-/*
-This class should have a request context and it should be mapped with stream id;
-when sending a message
-    * get the message
-    * do formating as needed
-    * check for a available channel;
-    * send the request;
-    * update the response handlers for that request;
-
-when a response received
-    * get the corresponding request
-    * set evelope for the messageContext
-    * inject to the sequence
-    *
- */
-
-/*
- private org.apache.synapse.MessageContext getSynapseMessageContext(String tenantDomain) throws AxisFault {
-        org.apache.synapse.MessageContext synCtx = createSynapseMessageContext(tenantDomain);
-        if (responseSender != null) {
-            synCtx.setProperty(SynapseConstants.IS_INBOUND, true);
-            synCtx.setProperty(InboundEndpointConstants.INBOUND_ENDPOINT_RESPONSE_WORKER, responseSender);
-        }
-        synCtx.setProperty(WebsocketConstants.WEBSOCKET_SUBSCRIBER_PATH, handshaker.uri().toString());
-        return synCtx;
-                }
-
-private static org.apache.synapse.MessageContext createSynapseMessageContext(String tenantDomain) throws AxisFault {
-        org.apache.axis2.context.MessageContext axis2MsgCtx = createAxis2MessageContext();
-        ServiceContext svcCtx = new ServiceContext();
-        OperationContext opCtx = new OperationContext(new InOutAxisOperation(), svcCtx);
-        axis2MsgCtx.setServiceContext(svcCtx);
-        axis2MsgCtx.setOperationContext(opCtx);
-        if (!tenantDomain.equals(MultitenantConstants.SUPER_TENANT_DOMAIN_NAME)) {
-        ConfigurationContext tenantConfigCtx =
-        TenantAxisUtils.getTenantConfigurationContext(tenantDomain,
-        axis2MsgCtx.getConfigurationContext());
-        axis2MsgCtx.setConfigurationContext(tenantConfigCtx);
-        axis2MsgCtx.setProperty(MultitenantConstants.TENANT_DOMAIN, tenantDomain);
-        } else {
-        axis2MsgCtx.setProperty(MultitenantConstants.TENANT_DOMAIN,
-        MultitenantConstants.SUPER_TENANT_DOMAIN_NAME);
-        }
-        SOAPFactory fac = OMAbstractFactory.getSOAP11Factory();
-        SOAPEnvelope envelope = fac.getDefaultEnvelope();
-        axis2MsgCtx.setEnvelope(envelope);
-        return MessageContextCreatorForAxis2.getSynapseMessageContext(axis2MsgCtx);
-        }
-
-
-private static org.apache.axis2.context.MessageContext createAxis2MessageContext() {
-        org.apache.axis2.context.MessageContext axis2MsgCtx = new org.apache.axis2.context.MessageContext();
-        axis2MsgCtx.setMessageID(UIDGenerator.generateURNString());
-        axis2MsgCtx.setConfigurationContext(ServiceReferenceHolder.getInstance().getConfigurationContextService()
-        .getServerConfigContext());
-        axis2MsgCtx.setProperty(org.apache.axis2.context.MessageContext.CLIENT_API_NON_BLOCKING,
-        Boolean.FALSE);
-        axis2MsgCtx.setServerSide(true);
-        return axis2MsgCtx;
-        }
-        */
- /*private void injectToSequence(org.apache.synapse.MessageContext synCtx,
-                                  String dispatchSequence, String dispatchErrorSequence) {
-        SequenceMediator injectingSequence = null;
-        if (dispatchSequence != null) {
-            injectingSequence = (SequenceMediator) synCtx.getSequence(dispatchSequence);
-        }
-        if (injectingSequence == null) {
-            injectingSequence = (SequenceMediator) synCtx.getMainSequence();
-        }
-        SequenceMediator faultSequence = getFaultSequence(synCtx, dispatchErrorSequence);
-        MediatorFaultHandler mediatorFaultHandler = new MediatorFaultHandler(faultSequence);
-        synCtx.pushFaultHandler(mediatorFaultHandler);
-        if (log.isDebugEnabled()) {
-            log.debug("injecting message to sequence : " + dispatchSequence);
-        }
-        synCtx.getEnvironment().injectMessage(synCtx, injectingSequence);
-    }*/
-
-// private SequenceMediator getFaultSequence(org.apache.synapse.MessageContext synCtx,
-
-   /* private MessageContext createResponseContext(){
-
-    }*/
-
-            /*org.apache.synapse.MessageContext synCtx = getSynapseMessageContext((String)request.getProperty(MultitenantConstants.TENANT_DOMAIN));
-
-          //  String message = ((TextWebSocketFrame) frame).text();
-
-            org.apache.axis2.context.MessageContext axis2MsgCtx =
-                    ((org.apache.synapse.core.axis2.Axis2MessageContext) synCtx)
-                            .getAxis2MessageContext();
-
-            Builder builder = null;
-            if (contentType == null) {
-                log.debug("No content type specified. Using SOAP builder.");
-                builder = new SOAPBuilder();
-            } else {
-                int index = contentType.indexOf(';');
-                String type = index > 0 ? contentType.substring(0, index)
-                        : contentType;
-                try {
-                    builder = BuilderUtil.getBuilderFromSelector(type, axis2MsgCtx);
-                } catch (AxisFault axisFault) {
-                    log.error("Error while creating message builder :: "
-                            + axisFault.getMessage());
-                }
-                if (builder == null) {
-                    if (log.isDebugEnabled()) {
-                        log.debug("No message builder found for type '" + type
-                                + "'. Falling back to SOAP.");
-                    }
-                    builder = new SOAPBuilder();
-                }
-            }
-
-            OMElement documentElement = null;
-            InputStream in = new AutoCloseInputStream(new ByteArrayInputStream(response.getBytes()));
-            documentElement = builder.processDocument(in, contentType, axis2MsgCtx);
-            synCtx.setEnvelope(TransportUtils.createSOAPEnvelope(documentElement));
-            AxisEngine.receive(axis2MsgCtx);
-*/

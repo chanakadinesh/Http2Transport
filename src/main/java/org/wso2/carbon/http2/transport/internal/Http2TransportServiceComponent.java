@@ -55,7 +55,7 @@ public class Http2TransportServiceComponent {
                 log.debug("Successfully registered the http(s)2 transport service");
             }
         } catch (Throwable e) {
-            log.error("Error while activating Websocket transport management bundle", e);
+            log.error("Error while activating http2 transport management bundle", e);
         }
     }
 
