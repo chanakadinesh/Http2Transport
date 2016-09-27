@@ -1,6 +1,7 @@
 package org.wso2.carbon.http2.transport.util;
 
 import io.netty.channel.*;
+import io.netty.handler.codec.http.FullHttpRequest;
 import io.netty.handler.codec.http.FullHttpResponse;
 import io.netty.handler.codec.http2.Http2DataFrame;
 import io.netty.handler.codec.http2.Http2HeadersFrame;
@@ -28,13 +29,13 @@ import java.util.TreeMap;
  */
 public class Http2ClientHandler extends SimpleChannelInboundHandler<Object> {
 
-    private SortedMap<Integer, Map.Entry<ChannelFuture, ChannelPromise>> streamidPromiseMap;
-    private TreeMap<Integer, MessageContext> requests;
+    private volatile SortedMap<Integer, Map.Entry<ChannelFuture, ChannelPromise>> streamidPromiseMap;
+    private volatile TreeMap<Integer, MessageContext> requests;
     private Log log= LogFactory.getLog(Http2ClientHandler.class);
     private int currentStreamId=3;
     private Channel channel;
     private TargetConfiguration targetConfig;
-    private TreeMap<Integer,Http2Response> responseMap;
+    private volatile TreeMap<Integer,Http2Response> responseMap;
     private boolean streamIdOverflow=false;
 
     public void setTenantDomain(String tenantDomain) {
@@ -58,18 +59,10 @@ public class Http2ClientHandler extends SimpleChannelInboundHandler<Object> {
         responseMap=new TreeMap<>();
     }
 
-    /**
-     * Create an association between an anticipated response stream id and a {@link ChannelPromise}
-     *
-     * @param streamId The stream for which a response is expected
-     * @param writeFuture A future that represent the request write operation
-     * @param promise The promise object that will be used to wait/notify events
-     * @return The previous object associated with {@code streamId}
-     * @see Http2ClientHandler#awaitResponses(long, TimeUnit)
-     */
-    public Map.Entry<ChannelFuture, ChannelPromise> put(int streamId, ChannelFuture writeFuture, ChannelPromise promise) {
-        return streamidPromiseMap.put(streamId,
-                new AbstractMap.SimpleEntry<ChannelFuture, ChannelPromise>(writeFuture, promise));
+
+    public void put(int streamId, Object request) {
+        streamidPromiseMap.put(streamId,
+                new AbstractMap.SimpleEntry<ChannelFuture, ChannelPromise>(channel.writeAndFlush(request), channel.newPromise()));
     }
 
     /**
@@ -115,17 +108,18 @@ public class Http2ClientHandler extends SimpleChannelInboundHandler<Object> {
             log.error("Http2ClientHandler unexpected message received: " + msg);
             return;
         }
-        Map.Entry<ChannelFuture, ChannelPromise> entry = streamidPromiseMap.get(streamId);
+        /*Map.Entry<ChannelFuture, ChannelPromise> entry = streamidPromiseMap.get(streamId);
 
         if (entry == null) {
             log.error("Message received for unknown stream id " + streamId);
-        } else {
+            return;
+        }*/
             MessageContext request=requests.get(streamId);
             if(request==null){
                 log.error("Message received without a request");
                 return;
             }
-
+            log.info("Respond received for stream id:"+streamId);
             //Get Http2Response message
             Http2Response response;
             if(responseMap.containsKey(streamId)){
@@ -144,7 +138,7 @@ public class Http2ClientHandler extends SimpleChannelInboundHandler<Object> {
             if(msg instanceof Http2DataFrame){
                 response.setDataFrame((Http2DataFrame)msg);
             }
-            entry.getValue().setSuccess();
+          //  entry.getValue().setSuccess();
 
             if(response.isEndOfStream()){
                 Http2ClientWorker clientWorker=new Http2ClientWorker(targetConfig,request,response);
@@ -153,7 +147,7 @@ public class Http2ClientHandler extends SimpleChannelInboundHandler<Object> {
                 responseMap.remove(streamId);
                 streamidPromiseMap.remove(streamId);
             }
-        }
+
     }
 
     public int getStreamId() {
@@ -169,11 +163,9 @@ public class Http2ClientHandler extends SimpleChannelInboundHandler<Object> {
         return streamIdOverflow;
     }
 
-    public void setRequest(int streamId, MessageContext msgCtx){
+    public synchronized void setRequest(int streamId, MessageContext msgCtx){
         requests.put(streamId,msgCtx);
     }
-
-
     public void setTargetConfig(TargetConfiguration targetConfiguration) {
         this.targetConfig=targetConfiguration;
     }

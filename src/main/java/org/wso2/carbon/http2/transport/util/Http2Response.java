@@ -6,6 +6,7 @@ import io.netty.handler.codec.http.HttpHeaderNames;
 import io.netty.handler.codec.http2.Http2DataFrame;
 import io.netty.handler.codec.http2.Http2Headers;
 import io.netty.handler.codec.http2.Http2HeadersFrame;
+import io.netty.handler.codec.http2.HttpConversionUtil;
 import io.netty.util.CharsetUtil;
 import org.apache.commons.collections.map.MultiValueMap;
 import org.apache.commons.httpclient.StatusLine;
@@ -60,6 +61,9 @@ public class Http2Response {
         endOfStream=true;
         List<Map.Entry<String,String>> headerList=response.headers().entries();
         for (Map.Entry header:headerList) {
+            if(header.getKey().toString().equalsIgnoreCase(HttpConversionUtil.ExtensionHeaderNames.STREAM_ID.toString())){
+                continue;
+            }
             String key=header.getKey().toString();
             key=(key.charAt(0)==':')?key.substring(1):key;
             if(this.headers.containsKey(key)) {

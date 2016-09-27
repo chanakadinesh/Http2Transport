@@ -129,7 +129,7 @@ public class Http2TransportSender extends AbstractTransportSender{
                 Channel channel=clientHandler.getChannel();
                 if (channel.isActive()) {
                     clientHandler.setRequest(streamId,msgCtx);
-                    clientHandler.put(streamId,channel.writeAndFlush(frame.retain()),channel.newPromise());
+                    clientHandler.put(streamId,frame.retain());
                 }
             } else {
                 RelayUtils.buildMessage(msgCtx, false);
@@ -150,6 +150,7 @@ public class Http2TransportSender extends AbstractTransportSender{
                 Channel channel=clientHandler.getChannel();
                 log.debug("Channel created to send message");
                 if (channel.isActive()) {
+                    clientHandler.setRequest(streamId,msgCtx);
                     log.debug("Sending message to backend: "+msg);
                     String method=(msgCtx.getProperty(Constants.Configuration.HTTP_METHOD)!=null?msgCtx.getProperty(Constants.Configuration.HTTP_METHOD).toString():POST.toString());
                     //Set content type and required frames
@@ -160,8 +161,8 @@ public class Http2TransportSender extends AbstractTransportSender{
                     request.headers().add(HttpConversionUtil.ExtensionHeaderNames.SCHEME.text(), secure?HttpScheme.HTTPS:HttpScheme.HTTP);
                     request.headers().add(HttpHeaderNames.ACCEPT_ENCODING, HttpHeaderValues.GZIP);
                     request.headers().add(HttpHeaderNames.ACCEPT_ENCODING, HttpHeaderValues.DEFLATE);
-                    clientHandler.setRequest(streamId,msgCtx);
-                    clientHandler.put(streamId,channel.writeAndFlush(request),channel.newPromise());
+                    clientHandler.put(streamId,request);
+                    log.info("Request sent to backend with stream id:"+streamId);
                 }
             }
 

@@ -2,15 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb9f764c-9ebf-4962-8724-210227c0e719" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2Client.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2ConnectionPool.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/wso2/carbon/http2/transport/util/Http2Client.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/wso2/carbon/http2/transport/util/Http2ConnectionPool$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/wso2/carbon/http2/transport/util/Http2ConnectionPool.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/wso2/carbon/http2/transport/Http2TransportSender.class" afterPath="$PROJECT_DIR$/target/classes/org/wso2/carbon/http2/transport/Http2TransportSender.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/wso2/carbon/http2/transport/internal/Http2TransportServiceComponent.class" afterPath="$PROJECT_DIR$/target/classes/org/wso2/carbon/http2/transport/internal/Http2TransportServiceComponent.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/wso2/carbon/http2/transport/util/Http2ClientHandler.class" afterPath="$PROJECT_DIR$/target/classes/org/wso2/carbon/http2/transport/util/Http2ClientHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/wso2/carbon/http2/transport/util/Http2ClientInitializer$1.class" afterPath="$PROJECT_DIR$/target/classes/org/wso2/carbon/http2/transport/util/Http2ClientInitializer$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/wso2/carbon/http2/transport/util/Http2ClientInitializer$UpgradeRequestHandler.class" afterPath="$PROJECT_DIR$/target/classes/org/wso2/carbon/http2/transport/util/Http2ClientInitializer$UpgradeRequestHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/wso2/carbon/http2/transport/util/Http2ClientInitializer$UserEventLogger.class" afterPath="$PROJECT_DIR$/target/classes/org/wso2/carbon/http2/transport/util/Http2ClientInitializer$UserEventLogger.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/wso2/carbon/http2/transport/util/Http2ClientInitializer.class" afterPath="$PROJECT_DIR$/target/classes/org/wso2/carbon/http2/transport/util/Http2ClientInitializer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/wso2/carbon/http2/transport/util/Http2ClientWorker$1.class" afterPath="$PROJECT_DIR$/target/classes/org/wso2/carbon/http2/transport/util/Http2ClientWorker$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/wso2/carbon/http2/transport/util/Http2ClientWorker.class" afterPath="$PROJECT_DIR$/target/classes/org/wso2/carbon/http2/transport/util/Http2ClientWorker.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/wso2/carbon/http2/transport/util/Http2ConnectionFactory.class" afterPath="$PROJECT_DIR$/target/classes/org/wso2/carbon/http2/transport/util/Http2ConnectionFactory.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/wso2/carbon/http2/transport/util/Http2Response.class" afterPath="$PROJECT_DIR$/target/classes/org/wso2/carbon/http2/transport/util/Http2Response.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/org.wso2.carbon.http2.transport-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/target/org.wso2.carbon.http2.transport-1.0-SNAPSHOT.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/Http2TransportSender.java" afterPath="$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/Http2TransportSender.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/internal/Http2TransportServiceComponent.java" afterPath="$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/internal/Http2TransportServiceComponent.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2ClientHandler.java" afterPath="$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2ClientHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2ClientWorker.java" afterPath="$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2ClientWorker.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2ClientInitializer.java" afterPath="$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2ClientInitializer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2ConnectionFactory.java" afterPath="$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2ConnectionFactory.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2Response.java" afterPath="$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2Response.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/target/classes/META-INF/MANIFEST.MF" />
     </list>
     <ignored path="Http2Transport.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,68 +46,40 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Http2ConnectionFactory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2ConnectionFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="54" column="57" selection-start-line="54" selection-start-column="57" selection-end-line="54" selection-end-column="57" />
-              <folding>
-                <element signature="method#getInstance#0;class#Http2ConnectionFactory#0" expanded="false" />
-                <element signature="method#getChannelHandler#0;class#Http2ConnectionFactory#0" expanded="false" />
-                <element signature="method#cacheNewConnection#0;class#Http2ConnectionFactory#0" expanded="false" />
-                <element signature="method#getClientHandlerFromPool#0;class#Http2ConnectionFactory#0" expanded="false" />
-                <element signature="method#generateKey#0;class#Http2ConnectionFactory#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Http2ClientInitializer.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Http2ClientInitializer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2ClientInitializer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+            <state relative-caret-position="2240">
+              <caret line="135" column="5" selection-start-line="135" selection-start-column="5" selection-end-line="135" selection-end-column="5" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="method#initChannel#0;class#Http2ClientInitializer#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Http2Constants.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2Constants.java">
+      <file leaf-file-name="Http2ClientWorker.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2ClientWorker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="7" column="44" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Http2Response.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2Response.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+            <state relative-caret-position="500">
+              <caret line="63" column="30" selection-start-line="63" selection-start-column="30" selection-end-line="63" selection-end-column="30" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#Http2Response#0;class#Http2Response#0" expanded="false" />
-                <element signature="method#Http2Response#1;class#Http2Response#0" expanded="false" />
-                <element signature="method#setDataFrame#0;class#Http2Response#0" expanded="false" />
-                <element signature="method#setData#0;class#Http2Response#0" expanded="false" />
+                <element signature="method#injectToAxis2Engine#0;class#Http2ClientWorker#0" expanded="false" />
+                <element signature="method#inferContentType#0;class#Http2ClientWorker#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Http2SettingsHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2SettingsHandler.java">
+      <file leaf-file-name="Http2Response.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2Response.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="55" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
+            <state relative-caret-position="426">
+              <caret line="121" column="20" selection-start-line="121" selection-start-column="20" selection-end-line="121" selection-end-column="20" />
               <folding>
-                <element signature="e#687#688#0" expanded="true" />
-                <element signature="e#725#726#0" expanded="true" />
+                <element signature="method#Http2Response#1;class#Http2Response#0" expanded="false" />
+                <element signature="method#setDataFrame#0;class#Http2Response#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -103,51 +88,77 @@
       <file leaf-file-name="Http2TransportSender.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/Http2TransportSender.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="175" column="1" selection-start-line="175" selection-start-column="1" selection-end-line="175" selection-end-column="1" />
+            <state relative-caret-position="1840">
+              <caret line="152" column="62" selection-start-line="152" selection-start-column="62" selection-end-line="152" selection-end-column="62" />
               <folding>
                 <element signature="method#init#0;class#Http2TransportSender#0" expanded="false" />
-                <element signature="method#sendMessage#0;class#Http2TransportSender#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Http2TransportService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/service/Http2TransportService.java">
+      <file leaf-file-name="Http2ClientHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2ClientHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="41" column="28" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
+            <state relative-caret-position="412">
+              <caret line="127" column="0" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
+              <folding>
+                <element signature="method#setTenantDomain#0;class#Http2ClientHandler#0" expanded="false" />
+                <element signature="method#acknowledgeHandshake#0;class#Http2ClientHandler#0" expanded="false" />
+                <element signature="method#Http2ClientHandler#0;class#Http2ClientHandler#0" expanded="false" />
+                <element signature="docComment;method#awaitResponses#0;class#Http2ClientHandler#0" expanded="false" />
+                <element signature="method#awaitResponses#0;class#Http2ClientHandler#0" expanded="false" />
+                <element signature="method#getStreamId#0;class#Http2ClientHandler#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SimpleChannelInboundHandler.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.1.4.Final/netty-all-4.1.4.Final-sources.jar!/io/netty/channel/SimpleChannelInboundHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1700">
+              <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Https2TransportService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/service/Https2TransportService.java">
+      <file leaf-file-name="AbstractChannelHandlerContext.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.1.4.Final/netty-all-4.1.4.Final-sources.jar!/io/netty/channel/AbstractChannelHandlerContext.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="41" column="28" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
+            <state relative-caret-position="5580">
+              <caret line="349" column="0" selection-start-line="349" selection-start-column="0" selection-end-line="349" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ServiceReferenceHolder.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/service/ServiceReferenceHolder.java">
+      <file leaf-file-name="InboundHttp2ToHttpAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.1.4.Final/netty-all-4.1.4.Final-sources.jar!/io/netty/handler/codec/http2/InboundHttp2ToHttpAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+            <state relative-caret-position="4340">
+              <caret line="247" column="0" selection-start-line="247" selection-start-column="0" selection-end-line="247" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Http2TransportServiceComponent.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/internal/Http2TransportServiceComponent.java">
+      <file leaf-file-name="ChannelInboundHandlerAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.1.4.Final/netty-all-4.1.4.Final-sources.jar!/io/netty/channel/ChannelInboundHandlerAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="57" column="51" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="51" />
+            <state relative-caret-position="1420">
+              <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Http2DataFrame.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.1.4.Final/netty-all-4.1.4.Final-sources.jar!/io/netty/handler/codec/http2/Http2DataFrame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -180,12 +191,12 @@
         <option value="$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/service/SecureWebsocketTransportService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/service/Http2TransportService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/service/Https2TransportService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2ClientInitializer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2Response.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2ConnectionFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2ClientWorker.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2ClientHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/internal/Http2TransportServiceComponent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2ClientInitializer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2ConnectionFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2Response.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2ClientHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/Http2TransportSender.java" />
       </list>
     </option>
@@ -242,9 +253,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -353,6 +361,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -840,12 +851,16 @@
       <workItem from="1473912867171" duration="16477000" />
       <workItem from="1474343074438" duration="14766000" />
       <workItem from="1474430580523" duration="15631000" />
-      <workItem from="1474529402058" duration="2563000" />
+      <workItem from="1474529402058" duration="5506000" />
+      <workItem from="1474601103787" duration="3444000" />
+      <workItem from="1474607538566" duration="7790000" />
+      <workItem from="1474889138185" duration="1700000" />
+      <workItem from="1474948213935" duration="759000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66432000" />
+    <option name="totallyTimeSpent" value="83068000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="66" y="27" width="1854" height="1053" extended-state="6" />
@@ -859,12 +874,11 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3305174" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3305174" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284055" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -876,6 +890,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284055" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -891,24 +906,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2Response.java</url>
-          <line>83</line>
-          <properties />
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2Response.java</url>
-          <line>109</line>
-          <properties />
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="21" />
+      <option name="time" value="31" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -917,21 +918,12 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2040">
-          <caret line="136" column="37" selection-start-line="136" selection-start-column="37" selection-end-line="136" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/Http2TransportSender.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2200">
           <caret line="141" column="13" selection-start-line="141" selection-start-column="13" selection-end-line="141" selection-end-column="13" />
           <folding>
             <element signature="method#init#0;class#Http2TransportSender#0" expanded="false" />
-            <element signature="method#sendMessage#0;class#Http2TransportSender#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -948,6 +940,7 @@
         <state relative-caret-position="160">
           <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="method#initChannel#0;class#Http2ClientInitializer#0" expanded="false" />
           </folding>
         </state>
@@ -958,15 +951,11 @@
         <state relative-caret-position="260">
           <caret line="15" column="66" selection-start-line="15" selection-start-column="66" selection-end-line="15" selection-end-column="66" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#setTenantDomain#0;class#Http2ClientHandler#0" expanded="false" />
             <element signature="method#acknowledgeHandshake#0;class#Http2ClientHandler#0" expanded="false" />
             <element signature="method#Http2ClientHandler#0;class#Http2ClientHandler#0" expanded="false" />
-            <element signature="docComment;method#put#0;class#Http2ClientHandler#0" expanded="false" />
-            <element signature="method#put#0;class#Http2ClientHandler#0" expanded="false" />
             <element signature="docComment;method#awaitResponses#0;class#Http2ClientHandler#0" expanded="false" />
             <element signature="method#awaitResponses#0;class#Http2ClientHandler#0" expanded="false" />
-            <element signature="method#channelRead0#0;class#Http2ClientHandler#0" expanded="false" />
             <element signature="method#getStreamId#0;class#Http2ClientHandler#0" expanded="false" />
           </folding>
         </state>
@@ -977,10 +966,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1255#1256#0" expanded="false" />
+            <element signature="e#1298#1299#0" expanded="false" />
             <element signature="method#getInstance#0;class#Http2ConnectionFactory#0" expanded="false" />
-            <element signature="method#getChannelHandler#0;class#Http2ConnectionFactory#0" expanded="false" />
-            <element signature="method#cacheNewConnection#0;class#Http2ConnectionFactory#0" expanded="false" />
-            <element signature="method#getClientHandlerFromPool#0;class#Http2ConnectionFactory#0" expanded="false" />
             <element signature="method#generateKey#0;class#Http2ConnectionFactory#0" expanded="false" />
           </folding>
         </state>
@@ -999,7 +988,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1007,21 +995,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="e#687#688#0" expanded="true" />
-            <element signature="e#725#726#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2Client.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/HttpResponseHandler.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2Constants.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1036,19 +1014,13 @@
         <state relative-caret-position="160">
           <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="method#initChannel#0;class#Http2ClientInitializer#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2ConnectionPool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2ConnectionPool.java" />
     <entry file="file://$PROJECT_DIR$/Http2Transport.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1320">
@@ -1068,7 +1040,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="370">
           <caret line="57" column="21" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1128,27 +1099,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.1.4.Final/netty-all-4.1.4.Final-sources.jar!/io/netty/channel/SimpleChannelInboundHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.1.4.Final/netty-all-4.1.4.Final-sources.jar!/io/netty/channel/ChannelInboundHandlerAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.1.4.Final/netty-all-4.1.4.Final-sources.jar!/io/netty/handler/codec/http2/InboundHttp2ToHttpAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="251" column="0" selection-start-line="251" selection-start-column="0" selection-end-line="251" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.1.4.Final/netty-all-4.1.4.Final-sources.jar!/io/netty/handler/codec/http2/DelegatingDecompressorFrameListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="179">
@@ -1160,32 +1110,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2260">
           <caret line="170" column="0" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#30579#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#3837#3838#0" expanded="false" />
-            <element signature="e#3863#3864#0" expanded="false" />
-            <element signature="e#4131#4132#0" expanded="false" />
-            <element signature="e#4200#4201#0" expanded="false" />
-            <element signature="e#4432#4433#0" expanded="false" />
-            <element signature="e#4499#4500#0" expanded="false" />
-            <element signature="e#4557#4558#0" expanded="false" />
-            <element signature="e#4584#4585#0" expanded="false" />
-            <element signature="e#4651#4652#0" expanded="false" />
-            <element signature="e#4678#4679#0" expanded="false" />
-            <element signature="e#5028#5029#0" expanded="false" />
-            <element signature="e#5063#5064#0" expanded="false" />
-            <element signature="e#16798#16799#0" expanded="false" />
-            <element signature="e#16860#16861#0" expanded="false" />
-            <element signature="e#18018#18019#0" expanded="false" />
-            <element signature="e#18072#18073#0" expanded="false" />
-            <element signature="e#21435#21436#0" expanded="false" />
-            <element signature="e#21493#21494#0" expanded="false" />
-            <element signature="e#26137#26138#0" expanded="false" />
-            <element signature="e#26175#26176#0" expanded="false" />
-            <element signature="e#26270#26271#0" expanded="false" />
-            <element signature="e#26309#26310#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1193,14 +1117,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2340">
           <caret line="135" column="0" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#6469#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#6332#6333#0" expanded="false" />
-            <element signature="e#6362#6363#0" expanded="false" />
-            <element signature="e#6420#6421#0" expanded="false" />
-            <element signature="e#6465#6466#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1208,26 +1124,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1420">
           <caret line="113" column="0" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#32641#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#3971#3972#0" expanded="false" />
-            <element signature="e#4004#4005#0" expanded="false" />
-            <element signature="e#4080#4081#0" expanded="false" />
-            <element signature="e#4138#4139#0" expanded="false" />
-            <element signature="e#4214#4215#0" expanded="false" />
-            <element signature="e#4280#4281#0" expanded="false" />
-            <element signature="e#4343#4344#0" expanded="false" />
-            <element signature="e#4374#4375#0" expanded="false" />
-            <element signature="e#4451#4452#0" expanded="false" />
-            <element signature="e#4495#4496#0" expanded="false" />
-            <element signature="e#4549#4550#0" expanded="false" />
-            <element signature="e#4631#4632#0" expanded="false" />
-            <element signature="e#7425#7426#0" expanded="false" />
-            <element signature="e#7460#7461#0" expanded="false" />
-            <element signature="e#7515#7516#0" expanded="false" />
-            <element signature="e#7578#7579#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1235,30 +1131,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6640">
           <caret line="393" column="0" selection-start-line="393" selection-start-column="0" selection-end-line="393" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#32519#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#4250#4251#0" expanded="false" />
-            <element signature="e#4302#4303#0" expanded="false" />
-            <element signature="e#5129#5130#0" expanded="false" />
-            <element signature="e#5172#5173#0" expanded="false" />
-            <element signature="e#5219#5220#0" expanded="false" />
-            <element signature="e#5249#5250#0" expanded="false" />
-            <element signature="e#5296#5297#0" expanded="false" />
-            <element signature="e#5326#5327#0" expanded="false" />
-            <element signature="e#5363#5364#0" expanded="false" />
-            <element signature="e#5434#5435#0" expanded="false" />
-            <element signature="e#8169#8170#0" expanded="false" />
-            <element signature="e#8204#8205#0" expanded="false" />
-            <element signature="e#8755#8756#0" expanded="false" />
-            <element signature="e#8797#8798#0" expanded="false" />
-            <element signature="e#22800#22801#0" expanded="false" />
-            <element signature="e#22859#22860#0" expanded="false" />
-            <element signature="e#24532#24533#0" expanded="false" />
-            <element signature="e#24578#24579#0" expanded="false" />
-            <element signature="e#32164#32165#0" expanded="false" />
-            <element signature="e#32222#32223#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1266,162 +1138,36 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4820">
           <caret line="272" column="0" selection-start-line="272" selection-start-column="0" selection-end-line="272" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#19676#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#6283#6284#0" expanded="false" />
-            <element signature="e#6332#6333#0" expanded="false" />
-            <element signature="e#6699#6700#0" expanded="false" />
-            <element signature="e#6747#6748#0" expanded="false" />
-            <element signature="e#7003#7004#0" expanded="false" />
-            <element signature="e#7038#7039#0" expanded="false" />
-            <element signature="e#8137#8138#0" expanded="false" />
-            <element signature="e#8192#8193#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.1.4.Final/netty-all-4.1.4.Final-sources.jar!/io/netty/channel/AbstractChannelHandlerContext.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2Client.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2ConnectionPool.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/service/Http2TransportService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6220">
-          <caret line="365" column="9" selection-start-line="365" selection-start-column="9" selection-end-line="365" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#38066#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#4492#4493#0" expanded="false" />
-            <element signature="e#4533#4534#0" expanded="false" />
-            <element signature="e#4588#4589#0" expanded="false" />
-            <element signature="e#4619#4620#0" expanded="false" />
-            <element signature="e#4672#4673#0" expanded="false" />
-            <element signature="e#4728#4729#0" expanded="false" />
-            <element signature="e#4959#4960#0" expanded="false" />
-            <element signature="e#4986#4987#0" expanded="false" />
-            <element signature="e#5484#5485#0" expanded="false" />
-            <element signature="e#5554#5555#0" expanded="false" />
-            <element signature="e#6427#6428#0" expanded="false" />
-            <element signature="e#6499#6500#0" expanded="false" />
-            <element signature="e#7411#7412#0" expanded="false" />
-            <element signature="e#7477#7478#0" expanded="false" />
-            <element signature="e#8322#8323#0" expanded="false" />
-            <element signature="e#8390#8391#0" expanded="false" />
-            <element signature="e#9360#9361#0" expanded="false" />
-            <element signature="e#9441#9442#0" expanded="false" />
-            <element signature="e#11384#11385#0" expanded="false" />
-            <element signature="e#11460#11461#0" expanded="false" />
-            <element signature="e#12451#12452#0" expanded="false" />
-            <element signature="e#12516#12517#0" expanded="false" />
-            <element signature="e#13524#13525#0" expanded="false" />
-            <element signature="e#13604#13605#0" expanded="false" />
-            <element signature="e#14711#14712#0" expanded="false" />
-            <element signature="e#14797#14798#0" expanded="false" />
-            <element signature="e#15316#15317#0" expanded="false" />
-            <element signature="e#15371#15372#0" expanded="false" />
-            <element signature="e#15450#15451#0" expanded="false" />
-            <element signature="e#15509#15510#0" expanded="false" />
-            <element signature="e#15744#15745#0" expanded="false" />
-            <element signature="e#15791#15792#0" expanded="false" />
-            <element signature="e#15841#15842#0" expanded="false" />
-            <element signature="e#15883#15884#0" expanded="false" />
-            <element signature="e#15938#15939#0" expanded="false" />
-            <element signature="e#15985#15986#0" expanded="false" />
-            <element signature="e#16658#16659#0" expanded="false" />
-            <element signature="e#16736#16737#0" expanded="false" />
-            <element signature="e#18119#18120#0" expanded="false" />
-            <element signature="e#18215#18216#0" expanded="false" />
-            <element signature="e#20802#20803#0" expanded="false" />
-            <element signature="e#20867#20868#0" expanded="false" />
-            <element signature="e#21821#21822#0" expanded="false" />
-            <element signature="e#21891#21892#0" expanded="false" />
-            <element signature="e#22809#22810#0" expanded="false" />
-            <element signature="e#22874#22875#0" expanded="false" />
-            <element signature="e#23334#23335#0" expanded="false" />
-            <element signature="e#23381#23382#0" expanded="false" />
-            <element signature="e#24889#24890#0" expanded="false" />
-            <element signature="e#24955#24956#0" expanded="false" />
-            <element signature="e#26927#26928#0" expanded="false" />
-            <element signature="e#26982#26983#0" expanded="false" />
-            <element signature="e#28393#28394#0" expanded="false" />
-            <element signature="e#28464#28465#0" expanded="false" />
-            <element signature="e#31030#31031#0" expanded="false" />
-            <element signature="e#31076#31077#0" expanded="false" />
-            <element signature="e#31107#31108#0" expanded="false" />
-            <element signature="e#31153#31154#0" expanded="false" />
-            <element signature="e#32758#32759#0" expanded="false" />
-            <element signature="e#32812#32813#0" expanded="false" />
-            <element signature="e#32883#32884#0" expanded="false" />
-            <element signature="e#32925#32926#0" expanded="false" />
-            <element signature="e#32994#32995#0" expanded="false" />
-            <element signature="e#33039#33040#0" expanded="false" />
-            <element signature="e#33518#33519#0" expanded="false" />
-            <element signature="e#33599#33600#0" expanded="false" />
-            <element signature="e#36661#36662#0" expanded="false" />
-            <element signature="e#36721#36722#0" expanded="false" />
-            <element signature="e#37055#37056#0" expanded="false" />
-            <element signature="e#37092#37093#0" expanded="false" />
-            <element signature="e#37816#37817#0" expanded="false" />
-            <element signature="e#37853#37854#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="400">
+          <caret line="41" column="28" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2Client.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/service/Https2TransportService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1379">
-          <caret line="92" column="15" selection-start-line="92" selection-start-column="15" selection-end-line="92" selection-end-column="15" />
-          <folding />
+        <state relative-caret-position="400">
+          <caret line="41" column="28" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2ConnectionPool.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/service/ServiceReferenceHolder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-          <folding />
+        <state relative-caret-position="120">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2ClientHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/internal/Http2TransportServiceComponent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="752">
-          <caret line="180" column="0" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#setTenantDomain#0;class#Http2ClientHandler#0" expanded="false" />
-            <element signature="method#acknowledgeHandshake#0;class#Http2ClientHandler#0" expanded="false" />
-            <element signature="method#Http2ClientHandler#0;class#Http2ClientHandler#0" expanded="false" />
-            <element signature="docComment;method#put#0;class#Http2ClientHandler#0" expanded="false" />
-            <element signature="method#put#0;class#Http2ClientHandler#0" expanded="false" />
-            <element signature="docComment;method#awaitResponses#0;class#Http2ClientHandler#0" expanded="false" />
-            <element signature="method#awaitResponses#0;class#Http2ClientHandler#0" expanded="false" />
-            <element signature="method#channelRead0#0;class#Http2ClientHandler#0" expanded="false" />
-            <element signature="method#getStreamId#0;class#Http2ClientHandler#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2ClientWorker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="268" column="0" selection-start-line="268" selection-start-column="0" selection-end-line="268" selection-end-column="0" />
-          <folding>
-            <element signature="method#Http2ClientWorker#0;class#Http2ClientWorker#0" expanded="false" />
-            <element signature="method#injectToAxis2Engine#0;class#Http2ClientWorker#0" expanded="false" />
-            <element signature="method#inferContentType#0;class#Http2ClientWorker#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2ConnectionFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="54" column="57" selection-start-line="54" selection-start-column="57" selection-end-line="54" selection-end-column="57" />
-          <folding>
-            <element signature="method#getInstance#0;class#Http2ConnectionFactory#0" expanded="false" />
-            <element signature="method#getChannelHandler#0;class#Http2ConnectionFactory#0" expanded="false" />
-            <element signature="method#cacheNewConnection#0;class#Http2ConnectionFactory#0" expanded="false" />
-            <element signature="method#getClientHandlerFromPool#0;class#Http2ConnectionFactory#0" expanded="false" />
-            <element signature="method#generateKey#0;class#Http2ConnectionFactory#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="960">
+          <caret line="57" column="51" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="51" />
         </state>
       </provider>
     </entry>
@@ -1433,80 +1179,122 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2Response.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2SettingsHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+        <state relative-caret-position="300">
+          <caret line="20" column="55" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2ConnectionFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#Http2Response#0;class#Http2Response#0" expanded="false" />
-            <element signature="method#Http2Response#1;class#Http2Response#0" expanded="false" />
-            <element signature="method#setDataFrame#0;class#Http2Response#0" expanded="false" />
-            <element signature="method#setData#0;class#Http2Response#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1255#1256#0" expanded="false" />
+            <element signature="e#1298#1299#0" expanded="false" />
+            <element signature="method#getInstance#0;class#Http2ConnectionFactory#0" expanded="false" />
+            <element signature="method#generateKey#0;class#Http2ConnectionFactory#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/service/Http2TransportService.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.1.4.Final/netty-all-4.1.4.Final-sources.jar!/io/netty/handler/codec/http2/Http2DataFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="41" column="28" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
+        <state relative-caret-position="180">
+          <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/service/Https2TransportService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2ClientInitializer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="41" column="28" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
+        <state relative-caret-position="2240">
+          <caret line="135" column="5" selection-start-line="135" selection-start-column="5" selection-end-line="135" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#initChannel#0;class#Http2ClientInitializer#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.1.4.Final/netty-all-4.1.4.Final-sources.jar!/io/netty/channel/SimpleChannelInboundHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1700">
+          <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/service/ServiceReferenceHolder.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.1.4.Final/netty-all-4.1.4.Final-sources.jar!/io/netty/channel/ChannelInboundHandlerAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        <state relative-caret-position="1420">
+          <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/internal/Http2TransportServiceComponent.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.1.4.Final/netty-all-4.1.4.Final-sources.jar!/io/netty/channel/AbstractChannelHandlerContext.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="57" column="51" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="51" />
+        <state relative-caret-position="5580">
+          <caret line="349" column="0" selection-start-line="349" selection-start-column="0" selection-end-line="349" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.1.4.Final/netty-all-4.1.4.Final-sources.jar!/io/netty/handler/codec/http2/InboundHttp2ToHttpAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4340">
+          <caret line="247" column="0" selection-start-line="247" selection-start-column="0" selection-end-line="247" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/Http2TransportSender.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="175" column="1" selection-start-line="175" selection-start-column="1" selection-end-line="175" selection-end-column="1" />
+        <state relative-caret-position="1840">
+          <caret line="152" column="62" selection-start-line="152" selection-start-column="62" selection-end-line="152" selection-end-column="62" />
           <folding>
             <element signature="method#init#0;class#Http2TransportSender#0" expanded="false" />
-            <element signature="method#sendMessage#0;class#Http2TransportSender#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2SettingsHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2ClientWorker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="55" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
+        <state relative-caret-position="500">
+          <caret line="63" column="30" selection-start-line="63" selection-start-column="30" selection-end-line="63" selection-end-column="30" />
           <folding>
-            <element signature="e#687#688#0" expanded="true" />
-            <element signature="e#725#726#0" expanded="true" />
+            <element signature="method#injectToAxis2Engine#0;class#Http2ClientWorker#0" expanded="false" />
+            <element signature="method#inferContentType#0;class#Http2ClientWorker#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2ClientInitializer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2ClientHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+        <state relative-caret-position="412">
+          <caret line="127" column="0" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
           <folding>
-            <element signature="method#initChannel#0;class#Http2ClientInitializer#0" expanded="false" />
+            <element signature="method#setTenantDomain#0;class#Http2ClientHandler#0" expanded="false" />
+            <element signature="method#acknowledgeHandshake#0;class#Http2ClientHandler#0" expanded="false" />
+            <element signature="method#Http2ClientHandler#0;class#Http2ClientHandler#0" expanded="false" />
+            <element signature="docComment;method#awaitResponses#0;class#Http2ClientHandler#0" expanded="false" />
+            <element signature="method#awaitResponses#0;class#Http2ClientHandler#0" expanded="false" />
+            <element signature="method#getStreamId#0;class#Http2ClientHandler#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/carbon/http2/transport/util/Http2Response.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="121" column="20" selection-start-line="121" selection-start-column="20" selection-end-line="121" selection-end-column="20" />
+          <folding>
+            <element signature="method#Http2Response#1;class#Http2Response#0" expanded="false" />
+            <element signature="method#setDataFrame#0;class#Http2Response#0" expanded="false" />
           </folding>
         </state>
       </provider>

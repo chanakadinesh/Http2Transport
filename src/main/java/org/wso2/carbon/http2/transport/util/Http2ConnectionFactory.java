@@ -44,16 +44,19 @@ public class Http2ConnectionFactory {
 
     public Http2ClientHandler getChannelHandler(URI uri) {
         Http2ClientHandler handler;
-        log.debug("Request new connection");
+
         handler=getClientHandlerFromPool(uri);
         if(handler==null){
             handler=cacheNewConnection(uri);
+            log.info("New connection created for "+uri);
+        }else {
+            log.info("Get connection from pool");
         }
         return handler;
     }
 
     public Http2ClientHandler cacheNewConnection(URI uri){
-        log.debug("Caching new connection");
+
         final SslContext sslCtx;
         final boolean SSL;
         if(uri.getScheme().equalsIgnoreCase(Http2Constants.HTTPS2) || uri.getScheme().equalsIgnoreCase("https")){
